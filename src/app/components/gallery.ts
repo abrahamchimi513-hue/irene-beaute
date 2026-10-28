@@ -22,10 +22,28 @@ const WORKS: Work[] = [
     title: 'French blanc et aile de papillon',
   },
   {
+    image: 'images/realisation-pedicure-fleurs.jpg',
+    alt: 'Pédicure french rose et blanc avec fleurs en relief sur le gros orteil',
+    tag: 'Pédicure',
+    title: 'French rose et fleurs en relief',
+  },
+  {
     image: 'images/realisation-coiffure-cuivre.jpg',
     alt: 'Coiffure lisse avec raie de côté et cheveux cuivrés',
     tag: 'Coiffure',
     title: 'Lisse cuivré, raie de côté',
+  },
+  {
+    image: 'images/realisation-lace-frontal-miel.jpg',
+    alt: 'Lace frontal brun miel coiffé en demi-chignon avec baby hair',
+    tag: 'Lace frontal',
+    title: 'Brun miel, demi-chignon',
+  },
+  {
+    image: 'images/realisation-lace-frontal-lisse.jpg',
+    alt: 'Lace frontal lisse avec raie centrale et demi-chignon',
+    tag: 'Lace frontal',
+    title: 'Lisse, raie centrale',
   },
 ];
 

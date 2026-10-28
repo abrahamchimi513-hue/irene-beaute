@@ -11,7 +11,7 @@ import { WhatsappService } from '../services/whatsapp.service';
     <section id="boutique" class="section section--white">
       <div class="container">
         <p class="eyebrow">Boutique</p>
-        <h2 class="section__title">Vêtements pour femme et mèches</h2>
+        <h2 class="section__title">Vêtements, mèches et perruques</h2>
         <p class="section__lead">
           Touchez un article pour voir les détails et les coloris. Ajoutez-le à votre commande, puis
           envoyez-la à Irène sur WhatsApp pour confirmer la disponibilité, la taille et le prix.
@@ -45,7 +45,7 @@ import { WhatsappService } from '../services/whatsapp.service';
                 }
               </button>
               <div class="product__body">
-                <p class="product__cat">{{ p.category === 'meches' ? 'Mèches' : 'Vêtements' }}</p>
+                <p class="product__cat">{{ categoryLabel(p.category) }}</p>
                 <h3 class="product__name">
                   <button class="name-btn" type="button" (click)="open(p, $event)">{{ p.name }}</button>
                 </h3>
@@ -94,7 +94,7 @@ import { WhatsappService } from '../services/whatsapp.service';
           </div>
 
           <div class="modal__info">
-            <p class="product__cat">{{ p.category === 'meches' ? 'Mèches' : 'Vêtements' }}</p>
+            <p class="product__cat">{{ categoryLabel(p.category) }}</p>
             <h3 class="modal__title">{{ p.name }}</h3>
             <p class="modal__price" [class.product__price--ask]="p.price === null">{{ p.price | fcfa }}</p>
             <p class="modal__desc">{{ p.description }}</p>
@@ -172,6 +172,10 @@ export class CatalogComponent {
     effect(() => {
       this.closeBtn()?.nativeElement.focus();
     });
+  }
+
+  protected categoryLabel(c: Category): string {
+    return CATEGORIES.find((x) => x.id === c)?.label ?? '';
   }
 
   /** Une seule image sur la carte : celle de l'article, ou du premier coloris. */

@@ -44,10 +44,10 @@ import { WhatsappService } from '../services/whatsapp.service';
           <p class="contact__card-title">Irène</p>
           <p class="contact__card-sub">{{ site.tagline }}</p>
           <ul class="contact__list">
-            <li>Ongleri</li>
-            <li>Coiffure et pose de lace frontal</li>
+            <li>Ongleri, manucure et pédicure</li>
+            <li>Coiffure, lace frontal et traitement de perruques</li>
             <li>Vêtements pour femme</li>
-            <li>Mèches</li>
+            <li>Mèches et perruques</li>
           </ul>
         </aside>
       </div>

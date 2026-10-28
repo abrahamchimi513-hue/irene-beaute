@@ -37,6 +37,14 @@ export const SERVICES: Service[] = [
     price: 5000,
   },
   {
+    id: 'manucure-pedicure',
+    group: 'ongleri',
+    name: 'Manucure et pédicure',
+    description: 'Soin des mains et des pieds, pour des ongles nets et soignés.',
+    price: null,
+    image: 'images/service-manucure-pedicure.jpg',
+  },
+  {
     id: 'coiffure',
     group: 'coiffure',
     name: 'Coiffure',
@@ -51,5 +59,12 @@ export const SERVICES: Service[] = [
     description: 'Pose soignée de votre lace frontal.',
     price: null,
     image: 'images/service-lace-frontal.jpg',
+  },
+  {
+    id: 'traitement-perruques',
+    group: 'coiffure',
+    name: 'Traitement de perruques',
+    description: 'Entretien et soin de votre perruque pour lui redonner de l\'éclat.',
+    price: null,
   },
 ];

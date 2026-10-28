@@ -4,7 +4,7 @@
  */
 export const SITE = {
   name: 'Irène',
-  tagline: 'Beauté, Mode & Élégance',
+  tagline: 'Beauty and Shop',
   intro: 'Offrez-vous un moment unique dédié à votre beauté et à votre style.',
   phoneDisplay: '+237 6 92 84 15 11',
   phoneTel: '+237692841511',

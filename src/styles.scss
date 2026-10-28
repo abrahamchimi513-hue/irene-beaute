@@ -1,29 +1,36 @@
 /* ==========================================================================
-   Irène - Beauté, Mode & Élégance
+   Irène - Beauty and Shop (thème ivoire, noir et or rose)
    Layout : une page, mobile d'abord. Bandeau rose, menu de tarifs façon salon,
    boutique en grille, formulaire de rendez-vous, contact.
    ========================================================================== */
 
 :root {
-  --ink: #2a0e1f;
-  --ink-soft: #6b4558;
-  --rose: #c80f66;
-  --rose-deep: #9c0b4e;
-  --rose-tint: #fbe3ee;
-  --blush: #fff1f6;
-  --paper: #fffbfd;
-  --white: #ffffff;
-  --line: #f0cddd;
-  --wa: #128c4a;
-  --wa-deep: #0d6e3a;
+  /* Palette ivoire, noir et or rose, tirée du logo. */
+  --ink: #1f1415; /* texte principal */
+  --ink-soft: #6a5754; /* texte secondaire */
+  --rose: #a35840; /* or rose foncé : accent, boutons, titres */
+  --rose-deep: #86452f; /* survol */
+  --rose-tint: #faefea; /* fond des sections et vignettes teintées */
+  --blush: #f7ebe5; /* fond des zones teintées */
+  --paper: #fbf6f3; /* fond de la page */
+  --white: #ffffff; /* fond des cartes et des champs */
+  --line: #e9d6cd; /* traits et bordures */
+  --wa: #0f7a40;
+  --wa-deep: #0b6334;
   --danger: #b00020;
+  --on-accent: #ffffff; /* texte posé sur l'or rose foncé */
+  --on-dark: #ffffff; /* texte posé sur le vert WhatsApp */
+  --footer-bg: #1a1011; /* pied de page : le noir du logo */
+  --footer-text: #d9bfb4;
+  --footer-brand: #ffffff;
+  --gold: #e2a68f; /* or rose clair, pour les détails sur fond sombre */
 
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-body: 'Jost', 'Segoe UI', Roboto, Arial, sans-serif;
 
   --radius: 18px;
   --radius-sm: 12px;
-  --shadow: 0 22px 44px -28px rgba(156, 11, 78, 0.5);
+  --shadow: 0 22px 44px -28px rgba(80, 40, 28, 0.35);
   --gutter: clamp(16px, 5vw, 40px);
   --max: 1160px;
   --header-h: 72px;
@@ -109,6 +116,13 @@ textarea {
   }
 }
 
+.field ::placeholder,
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.65;
+}
+
 /* ---------- Structure ---------- */
 
 .container {
@@ -171,8 +185,8 @@ textarea {
   left: 16px;
   top: -80px;
   z-index: 200;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--rose);
+  color: var(--on-accent);
   padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
@@ -208,7 +222,7 @@ textarea {
 
 .btn--primary {
   background: var(--rose);
-  color: var(--white);
+  color: var(--on-accent);
 }
 
 .btn--primary:hover {
@@ -217,7 +231,7 @@ textarea {
 
 .btn--wa {
   background: var(--wa);
-  color: var(--white);
+  color: var(--on-dark);
 }
 
 .btn--wa:hover {
@@ -232,7 +246,7 @@ textarea {
 
 .btn--ghost:hover {
   background: var(--ink);
-  color: var(--white);
+  color: var(--paper);
 }
 
 .btn--block {
@@ -268,7 +282,7 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 251, 253, 0.94);
+  background: rgba(251, 246, 243, 0.94);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -296,7 +310,7 @@ textarea {
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 0 2px var(--rose-tint);
+  box-shadow: 0 0 0 2px var(--gold);
 }
 
 .brand__text {
@@ -379,7 +393,7 @@ textarea {
   padding-inline: 6px;
   border-radius: 999px;
   background: var(--rose);
-  color: var(--white);
+  color: var(--on-accent);
   font-size: 0.78rem;
 }
 
@@ -421,7 +435,9 @@ textarea {
 /* ---------- Hero ---------- */
 
 .hero {
-  background: linear-gradient(180deg, var(--blush) 0%, var(--paper) 100%);
+  background:
+    radial-gradient(55% 60% at 82% 28%, rgba(226, 166, 143, 0.28), transparent 70%),
+    linear-gradient(180deg, var(--blush) 0%, var(--paper) 100%);
   overflow: hidden;
 }
 
@@ -506,7 +522,7 @@ textarea {
   height: 92%;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 30px 60px -30px rgba(42, 14, 31, 0.7);
+  box-shadow: 0 0 0 2px var(--gold), 0 30px 60px -30px rgba(31, 20, 21, 0.7);
 }
 
 .orb--soft {
@@ -731,9 +747,9 @@ textarea {
 }
 
 .tab[aria-pressed='true'] {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--white);
+  background: var(--rose);
+  border-color: var(--rose);
+  color: var(--on-accent);
 }
 
 .product-grid {
@@ -898,7 +914,7 @@ body.modal-open {
   position: fixed;
   inset: 0;
   z-index: 110;
-  background: rgba(42, 14, 31, 0.6);
+  background: rgba(31, 20, 21, 0.6);
 }
 
 .modal {
@@ -911,7 +927,7 @@ body.modal-open {
   max-height: calc(100vh - 32px);
   max-height: calc(100dvh - 32px);
   display: flex;
-  background: var(--paper);
+  background: var(--white);
   border-radius: var(--radius);
   box-shadow: 0 40px 80px -30px rgba(42, 14, 31, 0.7);
 }
@@ -1026,7 +1042,7 @@ body.modal-open {
 
 .swatch[aria-pressed='true'] {
   border-color: var(--rose);
-  box-shadow: 0 0 0 3px rgba(200, 15, 102, 0.18);
+  box-shadow: 0 0 0 3px rgba(163, 88, 64, 0.2);
   font-weight: 600;
 }
 
@@ -1065,7 +1081,7 @@ body.modal-open {
   margin-bottom: 16px;
   border-radius: 50%;
   background: var(--rose);
-  color: var(--white);
+  color: var(--on-accent);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.5rem;
@@ -1136,7 +1152,7 @@ body.modal-open {
 .field textarea:focus {
   outline: none;
   border-color: var(--rose);
-  box-shadow: 0 0 0 4px rgba(200, 15, 102, 0.15);
+  box-shadow: 0 0 0 4px rgba(163, 88, 64, 0.18);
 }
 
 .field [aria-invalid='true'] {
@@ -1218,7 +1234,7 @@ body.modal-open {
   padding: clamp(28px, 5vw, 48px);
   border-radius: var(--radius);
   background: var(--rose);
-  color: var(--white);
+  color: var(--on-accent);
   box-shadow: var(--shadow);
 }
 
@@ -1245,15 +1261,15 @@ body.modal-open {
 
 .contact__list li {
   padding-block: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(26, 15, 16, 0.3);
   font-weight: 500;
 }
 
 /* ---------- Pied de page ---------- */
 
 .footer {
-  background: var(--ink);
-  color: #f6dbe8;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding-block: 48px 24px;
 }
 
@@ -1278,7 +1294,7 @@ body.modal-open {
   font-weight: 700;
   font-size: 2.2rem;
   line-height: 1;
-  color: var(--white);
+  color: var(--footer-brand);
 }
 
 .footer__sub {
@@ -1298,7 +1314,7 @@ body.modal-open {
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   font-size: 0.86rem;
-  color: #d9aec3;
+  color: var(--footer-text);
 }
 
 /* ---------- Panneau de commande ---------- */
@@ -1307,7 +1323,7 @@ body.modal-open {
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: rgba(42, 14, 31, 0.55);
+  background: rgba(31, 20, 21, 0.6);
 }
 
 .drawer {
@@ -1464,7 +1480,7 @@ body.modal-open {
   height: 58px;
   border-radius: 50%;
   background: var(--wa);
-  color: var(--white);
+  color: var(--on-dark);
   box-shadow: 0 12px 28px -10px rgba(13, 110, 58, 0.7);
   transition: transform 0.2s, background-color 0.2s;
 }

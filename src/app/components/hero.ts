@@ -11,7 +11,7 @@ import { WhatsappService } from '../services/whatsapp.service';
           <p class="eyebrow">Tradex, {{ site.city }}</p>
           <h1 class="hero__title">
             <span class="hero__name">{{ site.name }}</span>
-            <span class="hero__tagline">Beauté, Mode &amp; Élégance</span>
+            <span class="hero__tagline">{{ site.tagline }}</span>
           </h1>
           <p class="hero__lead">{{ site.intro }}</p>
           <div class="hero__cta">
